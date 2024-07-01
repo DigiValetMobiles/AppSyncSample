@@ -1,0 +1,35 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext.kotlin_version = "1.9.0"
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
+        classpath "com.amazonaws:aws-android-sdk-appsync-gradle-plugin:3.4.1"
+        //classpath 'com.apollographql.apollo:apollo-gradle-plugin:2.5.13'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.50'
+    }
+}
+
+allprojects {
+    repositories {
+        // Add this maven block.
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
